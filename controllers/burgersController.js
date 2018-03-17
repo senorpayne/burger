@@ -11,11 +11,10 @@ res.redirect('/burgers');
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/burgers", function(req, res) {
-  burgers.all(function(data) {
+  burger.all(function(data) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });

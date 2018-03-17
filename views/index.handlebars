@@ -1,0 +1,31 @@
+<h1>Burgers!</h1>
+
+
+<div>
+
+   <img src="assets/img/burger.png">
+    <h2>Burgers Listed</h2>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+
+<form id="update" action="/burgers/devour/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="true">
+            <button class="btn btn-danger" type="submit">Devour it!</button>
+          </form>
+           <div class="well">
+            {{this.id}}. {{this.burger_name}}
+          </div>
+        {{/unless}}
+      {{/each}}
+    </div>
+
+      
+
+<h2> Burgers</h2>
+
+<form id="add" action="/burgers/add" method="POST">
+    <textarea name="burger_name"></textarea>
+    <button class="btn btn-warning" type="submit">Submit</button>
+  </form>
+
+</div>

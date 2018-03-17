@@ -8,7 +8,8 @@ var orm = {
           throw err;
         }
         cb(result);
-      });},
+      });
+    },
       create: function(table,col,vals,cb){
         var queryString = "INSERT INTO " + table;
 
@@ -29,7 +30,6 @@ var orm = {
           cb(result);
         });
       },
-      // An example of objColVals would be {name: panther, sleepy: true}
       update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
     
@@ -38,7 +38,6 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
     
-        console.log(queryString);
         connection.query(queryString, function(err, result) {
           if (err) {
             throw err;
@@ -62,9 +61,4 @@ var orm = {
       }
     
     };
-
-
-
-
-
 module.exports = orm;
