@@ -23,7 +23,3 @@ connection.connect(function(err) {
 // Export connection for our ORM to use.
 module.exports = connection;
 
-app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
